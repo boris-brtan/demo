@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mailerPackage;
+
+service Mailer {
+  rpc send(mailEntry) returns (sendResponse);
+}
+
+message mailEntry {
+  string subject = 1;
+  string sender = 2;
+  string recipient = 3;
+  string cc = 4;
+  string body = 5;
+}
+
+message sendResponse {
+  bool status = 1;
+}

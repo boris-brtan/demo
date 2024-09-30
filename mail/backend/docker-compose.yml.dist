@@ -1,0 +1,35 @@
+services:
+  mailer:
+    build:
+      context: ./src/mailer
+    command:
+      - npm run dev
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    develop:
+      watch:
+        - path: ./src/mailer/package.json
+          action: rebuild
+        - path: ./src/mailer
+          target: /usr/src/app
+          action: sync
+  api:
+    build:
+      context: ./src/api
+    command:
+      - npm run dev
+    depends_on:
+      - mailer
+    environment:
+      NODE_ENV: development
+    ports:
+      - 50000:50000
+    develop:
+      watch:
+        - path: ./src/mailer/package.json
+          action: rebuild
+        - path: ./src/mailer
+          target: /usr/src/app
+          action: sync

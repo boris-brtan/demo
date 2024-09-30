@@ -1,0 +1,20 @@
+services:
+    node:
+        image: node:current-alpine
+        entrypoint: ""
+        command:
+            - /bin/ash
+            - -c
+            - |
+              apk add curl
+              cd /home/node
+              npm run ${CMD:-dev}
+        environment:
+            - ADDR=0.0.0.0
+            - PORT=2222
+            - LOG_LVL=${LOG:-info}
+        ports:
+            - "127.0.0.1:${PORT-2222}:2222/tcp"
+        restart: ${RESTART:-no}
+        volumes:
+            - .:/home/node

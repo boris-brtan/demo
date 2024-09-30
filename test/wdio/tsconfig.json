@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "CommonJS",
+        "paths": {
+            "exclude": ["./tsconfig.json", "./wdio.conf.ts"]
+        },
+        "types": [
+            "node",
+            "@wdio/globals/types",
+            "expect-webdriverio",
+            "@wdio/cucumber-framework",
+            "@wdio/devtools-service"
+        ],
+        "target": "es2022"
+    }
+}

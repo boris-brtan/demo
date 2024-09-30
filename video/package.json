@@ -1,0 +1,34 @@
+{
+  "name": "video",
+  "version": "0.0.1",
+  "description": "get and play video streams",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch",
+    "prod": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boris-brtan/video.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "video"
+  ],
+  "author": "Boris Brtáň",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/boris-brtan/video/issues"
+  },
+  "homepage": "https://github.com/boris-brtan/video#readme",
+  "dependencies": {
+    "fastify": "^3.9.2",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
